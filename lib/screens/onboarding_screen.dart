@@ -1,39 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/screens/home_screen.dart';
-import 'package:onboarding/onboarding.dart';
+import 'package:hackathon/widgets/app_bg.dart';
+import 'package:introduction_screen/introduction_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({Key? key}) : super(key: key);
 
   final pages = [
-    PageModel(widget: Column(children: const [Placeholder(), Text('Foo')])),
-    PageModel(widget: Column(children: const [Placeholder(), Text('Bar')])),
+    PageViewModel(
+        title: 'About US',
+        reverse: true,
+        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
+    PageViewModel(
+        title: 'Tatarstan - About 1',
+        reverse: true,
+        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
+    PageViewModel(
+        title: 'Tatarstan - About 2',
+        reverse: true,
+        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
   ];
   @override
   Widget build(BuildContext context) {
-    return Onboarding(
-      background: Colors.green,
-      proceedButtonStyle: ProceedButtonStyle(
-        proceedpButtonText: const Text('Skip'),
-        proceedButtonRoute: (context) {
-          return Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
-            ),
-            (route) => false,
-          );
-        },
+    return AppBackground(
+      child: IntroductionScreen(
+        pages: pages,
+        next: const Icon(Icons.arrow_forward),
+        done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
+        onDone: () => Navigator.of(context)
+            .push(MaterialPageRoute(builder: (ctx) => const HomeScreen())),
+        globalBackgroundColor: Colors.transparent,
       ),
-      pages: pages,
-      indicator: Indicator(
-        indicatorDesign: IndicatorDesign.line(
-          lineDesign: LineDesign(
-            lineType: DesignType.line_uniform,
-          ),
-        ),
-      ),
-      isSkippable: true,
     );
   }
 }
