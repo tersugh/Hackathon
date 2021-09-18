@@ -24,6 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Stack(children: [
+      Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        colors: [Colors.green, Colors.white, Colors.red],
+      ))),
+      // google map view
+    ]));
   }
 }
