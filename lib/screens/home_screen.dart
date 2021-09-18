@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon/models/constants.dart';
+import 'package:hackathon/widgets/app_bg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,16 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(children: [
-      Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft,
-        colors: [Colors.green, Colors.white, Colors.red],
-      ))),
-      // google map view
-    ]));
+    return AppBackground(child: Container());
   }
 }
