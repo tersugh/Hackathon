@@ -3,6 +3,8 @@ import 'package:hackathon/screens/home_screen.dart';
 import 'package:hackathon/widgets/app_bg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import 'main_screen.dart';
+
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({Key? key}) : super(key: key);
 
@@ -29,7 +31,7 @@ class OnboardingScreen extends StatelessWidget {
         next: const Icon(Icons.arrow_forward),
         done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
         onDone: () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (ctx) => const HomeScreen())),
+            .push(MaterialPageRoute(builder: (ctx) => const MainScreen())),
         globalBackgroundColor: Colors.transparent,
       ),
     );

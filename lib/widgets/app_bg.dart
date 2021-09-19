@@ -28,7 +28,7 @@ class AppBackground extends StatelessWidget {
             top: 20,
             left: 20,
             child: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
                 onPressed: () => Navigator.of(context2).pop()))
     ]));
   }

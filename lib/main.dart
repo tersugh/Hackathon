@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import 'models/constants.dart';
-import 'screens/home_screen.dart';
 import 'screens/loading_screen.dart';
 import 'screens/onboarding_screen.dart';
 
