@@ -35,15 +35,11 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: FutureBuilder<SharedPreferences>(
-          future: SharedPreferences.getInstance(),
+      home: FutureBuilder<bool>(
+          future: Future.delayed(const Duration(seconds: 2), () => true),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
-              if (snapshot.data?.getBool(K.firstTime) ?? true) {
-                return OnboardingScreen();
-              } else {
-                return const HomeScreen();
-              }
+              return OnboardingScreen();
             }
             return const LoadingScreen();
           }),

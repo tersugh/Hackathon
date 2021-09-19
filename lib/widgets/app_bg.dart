@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 class AppBackground extends StatelessWidget {
   final Widget child;
-  const AppBackground({Key? key, required this.child}) : super(key: key);
+  final BuildContext context2;
+  final bool showBackButton;
+  const AppBackground(
+      {Key? key,
+      required this.context2,
+      required this.child,
+      this.showBackButton = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,14 @@ class AppBackground extends StatelessWidget {
         end: Alignment.bottomLeft,
         colors: [Colors.green, Colors.white, Colors.red],
       ))),
-      child
+      child,
+      if (showBackButton)
+        Positioned(
+            top: 20,
+            left: 20,
+            child: IconButton(
+                icon: Icon(Icons.arrow_back_ios),
+                onPressed: () => Navigator.of(context2).pop()))
     ]));
   }
 }

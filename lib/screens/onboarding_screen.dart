@@ -8,21 +8,22 @@ class OnboardingScreen extends StatelessWidget {
 
   final pages = [
     PageViewModel(
-        title: 'About US',
+        title: 'About Tatarstan',
         reverse: true,
-        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
+        body: 'Tatarstan Map',
+        image: Image.asset('assets/image.jpeg', width: 300, height: 400)),
     PageViewModel(
-        title: 'Tatarstan - About 1',
-        reverse: true,
-        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
-    PageViewModel(
-        title: 'Tatarstan - About 2',
-        reverse: true,
-        bodyWidget: Image.asset('assets/image.jpeg', width: 300, height: 400)),
+      title: '',
+      bodyWidget: Image.asset(
+        'assets/image3.jpeg',
+      ),
+      // Image.asset('assets/image.jpeg', width: 300, height: 400)
+    ),
   ];
   @override
   Widget build(BuildContext context) {
     return AppBackground(
+      context2: context,
       child: IntroductionScreen(
         pages: pages,
         next: const Icon(Icons.arrow_forward),

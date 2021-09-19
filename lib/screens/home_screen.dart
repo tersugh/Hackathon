@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hackathon/models/constants.dart';
-import 'package:hackathon/widgets/app_bg.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../widgets/app_bg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,19 +15,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
-    updatePreferences();
+    // updatePreferences();
     super.initState();
   }
 
-  void updatePreferences() {
-    SharedPreferences.getInstance().then((pref) {
-      pref.setBool(K.firstTime, false);
-    });
-  }
+  // void updatePreferences() {
+  //   SharedPreferences.getInstance().then((pref) {
+  //     pref.setBool(K.firstTime, false);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return AppBackground(
+      context2: context,
+      showBackButton: true,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Container(
