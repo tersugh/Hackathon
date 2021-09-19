@@ -6,13 +6,9 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(children: const [
-      Expanded(child: Placeholder()),
-      Padding(
-          padding: EdgeInsets.only(
-            top: 20,
-          ),
-          child: Text('Loading...'))
-    ]));
+        body: Image.asset(
+      'assets/image2.jpeg',
+      height: MediaQuery.of(context).size.height,
+    ));
   }
 }
